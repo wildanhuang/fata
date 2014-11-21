@@ -5,25 +5,28 @@
   </div>
 </div>
 
-<%= link_to "Merk", merks_path, :class => "btn btn-primary right" %>
-<%= link_to "Add new product", new_product_path, :class => "btn btn-primary right" %>
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Merk</th>
-    <th>Thumbnail</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>AA</td>
-    <td>AAA</td>
-    <td>Edit</td>
-  </tr>
-  <tr>
-    <td>B</td>
-    <td>BB</td>
-    <td>BBB</td>
-    <td>Edit</td>
-  </tr>
-</table>
+
+<div class="jumbotron transparent blue">
+  <%= link_to "Merk", merks_path, :class => "btn btn-primary right space" %>
+  <%= link_to "Add new product", new_product_path, :class => "btn btn-primary right space" %>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Merk</th>
+      <th>Thumbnail</th>
+      <th>Action</th>
+    </tr>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.merk.name %></td>
+        <td><%= image_tag(product.image.thumb.url) %></td>
+        <td>
+          <%= link_to "Edit", edit_product_path(id: product.id), :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', product_path(id: product.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

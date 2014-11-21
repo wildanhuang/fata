@@ -5,9 +5,9 @@
   </div>
 </div>
 
-<div class="container">
-  <%= link_to "Product", products_path, :class => "btn btn-primary right" %>
-  <%= link_to "Add new merk", new_merk_path, :class => "btn btn-primary right" %>
+<div class="jumbotron transparent blue">
+  <%= link_to "Product", products_path, :class => "btn btn-primary right space" %>
+  <%= link_to "Add new merk", new_merk_path, :class => "btn btn-primary right space" %>
   <table class="table table-striped">
     <tr>
       <th>Name</th>
@@ -18,7 +18,10 @@
       <tr>
         <td><%= merk.name %></td>
         <td><%= image_tag(merk.background.thumb.url) %></td>
-        <td>Edit</td>
+        <td>
+          <%= link_to "Edit", edit_merk_path(id: merk.id), :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', merk_path(id: merk.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </table>
