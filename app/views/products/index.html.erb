@@ -1,0 +1,29 @@
+<div class="jumbotron transparent">
+  <div class="container">
+    <h1>Welcome <small>Admin!</small></h1>
+    <p><big>Showing all products</big></p>
+  </div>
+</div>
+
+<%= link_to "Merk", merks_path, :class => "btn btn-primary right" %>
+<%= link_to "Add new product", new_product_path, :class => "btn btn-primary right" %>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Merk</th>
+    <th>Thumbnail</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>AA</td>
+    <td>AAA</td>
+    <td>Edit</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>BB</td>
+    <td>BBB</td>
+    <td>Edit</td>
+  </tr>
+</table>
