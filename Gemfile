@@ -9,6 +9,7 @@ gem 'pg'
 gem 'devise'
 gem 'byebug'
 gem 'carrierwave'
+gem 'mini_magick'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
