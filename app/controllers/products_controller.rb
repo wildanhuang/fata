@@ -3,7 +3,13 @@ class ProductsController < ApplicationController
   before_filter :prepare_params, only: [:edit, :show]
 
   def index
-    @products = Product.all
+    if params[:merk_id].present?
+      @products = Product.where(merk_id: params[:merk_id])
+    else
+      @products = Product.all
+    end
+
+    @merks = Merk.all
   end
 
   def show
