@@ -2,21 +2,21 @@
   body {
   background: url(<%= @product.merk.background_url %>) no-repeat fixed;
   background-position: left;
-  background-position: center;
+  background-position: top;
   background-color: #eee;
 }
 </style>
 
 <div class="jumbotron transparent">
-  <div class="container center">
-    <h1><%= @product.name %></h1>
+  <div class="container">
+    <!--h1><% @product.name %></h1-->
     <%= image_tag(@product.image_url, :class => "content_box1") %>
   </div>
 
   <div class="row">
     <% merk = @product.merk %>
-    <div class="col-md-2">&nbsp;</div>
-    <div class="col-md-8">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10" style="overflow: auto; height: 120px;">
       <% count = 0 %>
       <% merk.products.each do |product| %>
       <% count += 1 %>
@@ -29,6 +29,6 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-1">&nbsp;</div>
   </div>
 </div>
