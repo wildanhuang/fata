@@ -52,7 +52,7 @@ class MerksController < ApplicationController
   private
 
   def merk_params
-    params.require(:merk).permit(:name, :background)
+    params.require(:merk).permit(:name, :background, :group_name)
   end
 
   def prepare_params
