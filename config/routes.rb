@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :homes
   resources :products
   resources :merks
+  resources :group_names
 
   # Example resource route with options:
   #   resources :products do

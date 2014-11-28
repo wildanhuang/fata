@@ -1,0 +1,28 @@
+<div class="jumbotron transparent">
+  <div class="container">
+    <h1>Welcome <small>Admin!</small></h1>
+    <p><big>Showing all group</big></p>
+  </div>
+</div>
+
+<div class="jumbotron transparent blue">
+  <%= link_to "Merk", merks_path, :class => "btn btn-primary right space" %>
+  <%= link_to "Add new Group", new_group_name_path, :class => "btn btn-primary right space" %>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Index</th>
+      <th>Action</th>
+    </tr>
+    <% @group_names.each do |group_name| %>
+      <tr>
+        <td><%= group_name.name %></td>
+        <td><%= group_name.index %></td>
+        <td>
+          <%= link_to "Edit", edit_group_name_path(id: group_name.id), :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', group_name_path(id: group_name.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

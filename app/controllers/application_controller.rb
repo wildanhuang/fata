@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
 
   def reload_merk
-    @merks = Merk.all.order("group_name ASC")
+    @groups = GroupName.all.order("index ASC")
   end
 end

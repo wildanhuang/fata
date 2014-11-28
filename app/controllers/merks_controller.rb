@@ -11,6 +11,7 @@ class MerksController < ApplicationController
 
   def new
     @merk = Merk.new
+    @group_names = GroupName.all
   end
 
   def create
@@ -25,6 +26,7 @@ class MerksController < ApplicationController
   end
 
   def edit
+    @group_names = GroupName.all
   end
 
   def update
@@ -52,7 +54,7 @@ class MerksController < ApplicationController
   private
 
   def merk_params
-    params.require(:merk).permit(:name, :background, :group_name)
+    params.require(:merk).permit(:name, :background, :group_name_id)
   end
 
   def prepare_params
