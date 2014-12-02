@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :products
   resources :merks
   resources :group_names
+  resources :slides
 
   # Example resource route with options:
   #   resources :products do

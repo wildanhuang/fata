@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
 
   def reload_merk
     @groups = GroupName.all.order("index ASC")
+    @slides = SlideShow.all.order("index ASC")
   end
 end

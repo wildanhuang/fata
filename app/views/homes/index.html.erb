@@ -1,10 +1,15 @@
 
 <div class="container">
   <div id="slides">
-    <%= image_tag "example1.jpg" %>
-    <%= image_tag "example2.jpg" %>
-    <%= image_tag "example3.jpg" %>
-    <%= image_tag "example4.jpg" %>
+    <% if @slides && @slides.count > 1 %>      
+      <% @slides.each do |slide| %>
+        <%= image_tag slide.image_url %>
+      <% end %>
+    <% else %>
+      <% @groups.merks.each do |merk| %>
+        <%= image_tag merk.background_url %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
