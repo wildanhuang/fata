@@ -1,0 +1,27 @@
+<div class="jumbotron transparent">
+  <div class="container">
+    <h1>Welcome <small>Admin!</small></h1>
+    <p><big>Showing all Slides</big></p>
+  </div>
+</div>
+
+<div class="jumbotron transparent blue">
+  <%= link_to "Add new slide", new_slide_path, :class => "btn btn-primary right space" %>
+  <table class="table table-striped">
+    <tr>
+      <th>Index</th>
+      <th>Thumbnail</th>
+      <th>Action</th>
+    </tr>
+    <% @slides.each do |slide| %>
+      <tr>
+        <td><%= slide.index %></td>
+        <td><%= image_tag(slide.image.thumb.url) %></td>
+        <td>
+          <%= link_to "Edit", edit_slide_path(id: slide.id), :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', slide_path(id: slide.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

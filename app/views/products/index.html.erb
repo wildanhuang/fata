@@ -15,6 +15,7 @@
 <div class="jumbotron transparent blue">
   <%= select_tag "merk_id", options_for_select(@merks.collect{|merk| [merk.name, merk.id]}, params[:merk_id]), 
     :prompt => 'Select Filter', :class => "left form-control", :style => "width: 30%;", :onchange => "filterUrl(this.value);" %>
+  <%= link_to "Slide", slides_path, :class => "btn btn-primary right space" %>
   <%= link_to "Merk", merks_path, :class => "btn btn-primary right space" %>
   <%= link_to "Add new product", new_product_path, :class => "btn btn-primary right space" %>
   <table class="table table-striped">
