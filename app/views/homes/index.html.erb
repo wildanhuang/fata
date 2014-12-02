@@ -1,29 +1,13 @@
-<!--div class="jumbotron transparent">
-  <div class="container">
-    <h1>Welcome <small>to our site</small></h1>
-    <p><big>Fata Seprei Bandung</big> dimulai pada tahun </p>
 
-    <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Show more</a></p>
-    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title" id="myModalLabel">Fata Seprei Bandung</h3>
-          </div>
-          <div class="modal-body">
-            <p class="text-justify lead"><strong>Fata Seprei Bandung</strong> dimulai pada tahun ...</p>
-          </div>
-          <div class="modal-footer">
-            <%#= link_to "About us", "", :class => "btn btn-primary" %>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div id="slides">
+    <%= image_tag "example1.jpg" %>
+    <%= image_tag "example2.jpg" %>
+    <%= image_tag "example3.jpg" %>
+    <%= image_tag "example4.jpg" %>
   </div>
-</div-->
+</div>
+
 <div class="container">
   <div class="col-md-3">
   </div>
@@ -34,3 +18,18 @@
     <% video_tag "balmut_fata_imajinasi.mp4", controls: true, width: 480 %>
   </div>
 </div>
+
+<script>
+  $(function() {
+    $('#slides').slidesjs({
+      width: 940,
+      height: 350,
+      play: {
+        active: true,
+        auto: true,
+        interval: 4000,
+        swap: true
+      }
+    });
+  });
+</script>
