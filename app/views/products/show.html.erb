@@ -11,10 +11,10 @@
     <%= image_tag(@product.image_url, :class => "content_box1") %>
 
     <div class="row">
-      <% merk = @product.merk %>
+      <% products = load_products(@product.merk_id) %>
       <div class="col-md-12" style="overflow: auto; height: 120px;">
         <% count = 0 %>
-        <% merk.products.each do |product| %>
+        <% products.each do |product| %>
         <% count += 1 %>
           <div class="content_box2">
             <%= link_to image_tag(product.image.thumb.url), product_path(id: product.id) %>
