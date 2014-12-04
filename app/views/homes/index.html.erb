@@ -1,5 +1,4 @@
 
-<div class="container">
   <div id="slides">
     <% if @slides && @slides.count > 1 %>      
       <% @slides.each do |slide| %>
@@ -11,7 +10,6 @@
       <% end %>
     <% end %>
   </div>
-</div>
 
 <div class="container">
   <div class="col-md-5">
@@ -27,7 +25,7 @@
 <script>
   $(function() {
     $('#slides').slidesjs({
-      width: 940,
+      width: 1024,
       height: 350,
       play: {
         active: true,
