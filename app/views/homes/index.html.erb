@@ -5,7 +5,7 @@
         <%= image_tag slide.image_url %>
       <% end %>
     <% else %>
-      <% @groups.merks.each do |merk| %>
+      <% @groups.last.merks.each do |merk| %>
         <%= image_tag merk.background_url %>
       <% end %>
     <% end %>
