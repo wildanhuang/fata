@@ -13,6 +13,17 @@
 
 
 <div class="jumbotron transparent blue">
+  <%= form_for @imaging, :url => upload_image_homes_path, :html => {:class => "form-horizontal"} do |f| %>
+    <label class="col-sm-2 control-label">Background Image</label>
+    <div class="col-sm-3">
+      <%= image_tag(@imaging.image_url, width: "200") if @imaging.image? %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="col-sm-offset-3">
+      <%= f.submit "Upload", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
   <%= select_tag "merk_id", options_for_select(@merks.collect{|merk| [merk.name, merk.id]}, params[:merk_id]), 
     :prompt => 'Select Filter', :class => "left form-control", :style => "width: 30%;", :onchange => "filterUrl(this.value);" %>
   <%= link_to "Slide", slides_path, :class => "btn btn-primary right space" %>

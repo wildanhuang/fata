@@ -7,6 +7,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <!--link rel="shortcut icon" href="../assets/favicon.png"-->
+    <%
+      imaging = Imaging.where(name: "background").first
+
+      if imaging
+    %>
+      <style type="text/css">
+        body {
+        background: url(<%= imaging.image_url %>) no-repeat fixed;
+        background-position: center bottom;
+        background-color: #eee;
+      }
+      </style>
+    <% end %>
   </head>
   <body>
     <%= render 'layouts/navigation_links' %>

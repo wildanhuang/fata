@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
 
+    @imaging = Imaging.new
     @merks = Merk.all
   end
 
