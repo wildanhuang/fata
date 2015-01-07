@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :get_product]
   before_filter :prepare_params, only: [:edit, :show]
 
   def index
@@ -15,6 +15,14 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+  end
+
+  def get_product
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+        format.js
+    end
   end
 
   def new

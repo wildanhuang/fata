@@ -21,7 +21,13 @@ Rails.application.routes.draw do
       post 'upload_image'
     end
   end
-  resources :products
+
+  resources :products do
+    collection do
+      get 'get_product'
+    end
+  end
+
   resources :merks
   resources :group_names
   resources :slides

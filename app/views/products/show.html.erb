@@ -5,10 +5,26 @@
   background-color: #eee;
 }
 </style>
+<script type="text/javascript">
+  function changeImage(id){
+    $.ajax({      
+      url: '/products/get_product?id='+id,
+      type:'get',
+      data: {
+      },
+      success: function( data ) {
+      },
+      error: function( data ){
+      }
+    });
+  }
+</script>
 
   <div class="container">
     <!--h1><% @product.name %></h1-->
-    <%= image_tag(@product.image_url, :class => "content_box1") %>
+    <div id="show_image">
+      <%= image_tag(@product.image_url, :class => "content_box1") %>
+    </div>
 
     <div class="row">
       <% products = load_products(@product.merk_id) %>
@@ -17,7 +33,8 @@
         <% products.each do |product| %>
         <% count += 1 %>
           <div class="content_box2">
-            <%= link_to image_tag(product.image.thumb.url), product_path(id: product.id) %>
+            <%#= link_to image_tag(product.image.thumb.url), product_path(id: product.id) %>
+            <%= link_to image_tag(product.image.thumb.url), "javascript:void(0);", onclick: "changeImage(#{product.id})" %>
           </div>
             <% if count == 8 %>
             <div class="clear"></div>
